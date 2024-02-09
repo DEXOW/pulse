@@ -15,6 +15,7 @@ import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.io.IOException;
 import java.util.List;
@@ -22,6 +23,7 @@ import java.util.List;
 public class explore extends AppCompatActivity {
     private FusedLocationProviderClient fusedLocationClient;
     private FirebaseAuth firebaseAuth;
+    private FirebaseFirestore firebaseFirestore;
     private TextView greeting, userLocation;
     private RelativeLayout exploreBtn, eventsBtn, savedBtn, SettingsBtn;
 
@@ -40,6 +42,7 @@ public class explore extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
         FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
+        firebaseFirestore = FirebaseFirestore.getInstance();
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
 
         if (checkSelfPermission(android.Manifest.permission.ACCESS_COARSE_LOCATION) != getPackageManager().PERMISSION_GRANTED) {
@@ -96,6 +99,18 @@ public class explore extends AppCompatActivity {
         SettingsBtn.setOnClickListener(v -> {
             finish();
             startActivity(new Intent(explore.this, settings.class));
+        });
+
+        firebaseFirestore.collection("events").get().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                task.getResult().getDocuments().forEach(documentSnapshot -> {
+                    // Append events to the view
+
+                });
+                Toast.makeText(this, "Events loaded", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, "Error loading events", Toast.LENGTH_SHORT).show();
+            }
         });
     }
 }
