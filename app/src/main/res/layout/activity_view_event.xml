@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor">
+
+    <View
+        android:id="@+id/topbar"
+        android:layout_width="wrap_content"
+        android:layout_height="59dp"
+        android:background="@drawable/topbar_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/back_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:background="@drawable/icon_circle_bg"
+        app:layout_constraintStart_toStartOf="@+id/topbar"
+        app:layout_constraintBottom_toBottomOf="@+id/topbar"
+        app:layout_constraintTop_toTopOf="@+id/topbar"
+        app:srcCompat="@drawable/back_icon"/>
+
+    <TextView
+        android:id="@+id/pageTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/trip_sans_bold"
+        android:textSize="20dp"
+        android:text="Event Details"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@+id/back_btn"
+        app:layout_constraintEnd_toStartOf="@+id/notifications_btn"
+        app:layout_constraintBottom_toBottomOf="@+id/topbar"
+        app:layout_constraintTop_toTopOf="@+id/topbar" />
+
+    <ImageButton
+        android:id="@+id/notifications_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/icon_circle_bg"
+        app:layout_constraintEnd_toEndOf="@+id/topbar"
+        app:layout_constraintBottom_toBottomOf="@+id/topbar"
+        app:layout_constraintTop_toTopOf="@+id/topbar"
+        app:srcCompat="@drawable/nav_notifications_icon"/>
+
+    <ImageView
+        android:id="@+id/eventImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        app:layout_constraintTop_toBottomOf="@+id/topbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/image_1_large" />
+
+    <RelativeLayout
+        android:id="@+id/eventDate"
+        android:layout_width="26dp"
+        android:layout_height="32dp"
+        app:layout_constraintTop_toTopOf="@+id/eventImage"
+        app:layout_constraintStart_toStartOf="@+id/eventImage"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/date_box">
+
+        <TextView
+            android:id="@+id/eventDay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:fontFamily="@font/trip_sans_medium"
+            android:text="30"
+            android:textAlignment="center"
+            android:textSize="15dp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/eventMonth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:fontFamily="@font/trip_sans_medium"
+            android:text="JUL"
+            android:textAlignment="center"
+            android:textSize="12dp"
+            android:textColor="@color/black"/>
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/saveBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        app:srcCompat="@drawable/favorite"
+        app:layout_constraintTop_toTopOf="@+id/eventImage"
+        app:layout_constraintEnd_toEndOf="@+id/eventImage" />
+
+    <TextView
+        android:id="@+id/eventTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="20dp"
+        android:fontFamily="@font/trip_sans_medium"
+        android:text="Sunfest : Live In Concert 2024"
+        app:layout_constraintTop_toBottomOf="@+id/eventImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/eventDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="30dp"
+        android:textAlignment="center"
+        android:text="It is Sri Lanka's biggest international music festival, happening annually in December. It's a one-day event featuring popular DJs and international artists."
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eventTitle" />
+
+    <RelativeLayout
+        android:id="@+id/details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/detailValues"
+        app:layout_constraintTop_toBottomOf="@+id/eventDescription"
+        app:layout_constraintHorizontal_chainStyle="packed">
+
+        <RelativeLayout
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageView
+                android:id="@+id/dateIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/date_range" />
+
+            <TextView
+                android:id="@+id/dateTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/dateIcon"
+                android:fontFamily="@font/trip_sans_medium"
+                android:text="Date"
+                android:textColor="@color/black"
+                android:textSize="12dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/date">
+
+            <ImageView
+                android:id="@+id/timeIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/access_time" />
+
+            <TextView
+                android:id="@+id/timeTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/timeIcon"
+                android:fontFamily="@font/trip_sans_medium"
+                android:text="Time"
+                android:textColor="@color/black"
+                android:textSize="12dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/capacity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/time">
+
+            <ImageView
+                android:id="@+id/capacityIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/people" />
+
+            <TextView
+                android:id="@+id/capactiyTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/capacityIcon"
+                android:fontFamily="@font/trip_sans_medium"
+                android:text="Availability"
+                android:textColor="@color/black"
+                android:textSize="12dp" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/detailValues"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        app:layout_constraintStart_toEndOf="@+id/details"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/details"
+        app:layout_constraintHorizontal_chainStyle="packed">
+
+        <TextView
+            android:id="@+id/dateValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/trip_sans_medium"
+            android:text="30th March 2024"
+            android:textColor="@color/black"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/timeValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/dateValue"
+            android:fontFamily="@font/trip_sans_medium"
+            android:text="5.00 PM Onwards"
+            android:textColor="@color/black"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/capactiyValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/timeValue"
+            android:fontFamily="@font/trip_sans_medium"
+            android:text="120 out of 5000"
+            android:textColor="@color/black"
+            android:textSize="12dp" />
+
+    </RelativeLayout>
+
+    <ImageButton
+        android:id="@+id/shareBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:background="@drawable/squircle_bg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/reserveBtn"
+        app:layout_constraintBottom_toBottomOf="@+id/reserveBtn"
+        app:srcCompat="@drawable/share_icon"
+        app:layout_constraintHorizontal_chainStyle="packed"/>
+
+    <RelativeLayout
+        android:id="@+id/reserveBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/btn_1_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/shareBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_chainStyle="packed">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:textColor="@color/white"
+            android:fontFamily="@font/trip_sans_medium"
+            android:textSize="16dp"
+            android:text="Reserve"/>
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

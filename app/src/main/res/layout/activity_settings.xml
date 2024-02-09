@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor">
+
+    <View
+        android:id="@+id/topbar"
+        android:layout_width="wrap_content"
+        android:layout_height="59dp"
+        android:background="@drawable/topbar_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/back_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:background="@drawable/icon_circle_bg"
+        app:layout_constraintStart_toStartOf="@+id/topbar"
+        app:layout_constraintBottom_toBottomOf="@+id/topbar"
+        app:layout_constraintTop_toTopOf="@+id/topbar"
+        app:srcCompat="@drawable/back_icon"/>
+
+    <TextView
+        android:id="@+id/pageTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/trip_sans_bold"
+        android:textSize="20dp"
+        android:text="Settings"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@+id/back_btn"
+        app:layout_constraintEnd_toStartOf="@+id/notifications_btn"
+        app:layout_constraintBottom_toBottomOf="@+id/topbar"
+        app:layout_constraintTop_toTopOf="@+id/topbar" />
+
+    <ImageButton
+        android:id="@+id/notifications_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/icon_circle_bg"
+        app:layout_constraintEnd_toEndOf="@+id/topbar"
+        app:layout_constraintBottom_toBottomOf="@+id/topbar"
+        app:layout_constraintTop_toTopOf="@+id/topbar"
+        app:srcCompat="@drawable/nav_notifications_icon"/>
+
+    <View
+        android:id="@+id/navbar"
+        android:layout_width="wrap_content"
+        android:layout_height="75dp"
+        android:background="@drawable/navbar_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <RelativeLayout
+        android:id="@+id/explore_nav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/navbar"
+        app:layout_constraintEnd_toStartOf="@+id/calender_nav"
+        app:layout_constraintBottom_toBottomOf="@+id/navbar"
+        app:layout_constraintTop_toTopOf="@+id/navbar">
+
+
+        <ImageView
+            android:id="@+id/exploreIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/exploreNavText"
+            android:layout_alignEnd="@+id/exploreNavText"
+            app:srcCompat="@drawable/nav_explore_icon" />
+
+        <TextView
+            android:id="@+id/exploreNavText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/exploreIcon"
+            android:text="Explore"
+            android:textColor="@color/colorAccent"
+            android:textSize="12dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/calender_nav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/explore_nav"
+        app:layout_constraintEnd_toStartOf="@+id/add_new"
+        app:layout_constraintBottom_toBottomOf="@+id/navbar"
+        app:layout_constraintTop_toTopOf="@+id/navbar">
+
+
+        <ImageView
+            android:id="@+id/calenderIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/calenderNavText"
+            android:layout_alignEnd="@+id/calenderNavText"
+            app:srcCompat="@drawable/nav_calender_icon" />
+
+        <TextView
+            android:id="@+id/calenderNavText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/calenderIcon"
+            android:text="Events"
+            android:textColor="@color/colorAccent"
+            android:textSize="12dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/add_new"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-75dp"
+        app:layout_constraintStart_toEndOf="@+id/calender_nav"
+        app:layout_constraintEnd_toStartOf="@+id/saved_nav"
+        app:layout_constraintBottom_toBottomOf="@+id/navbar"
+        app:layout_constraintTop_toTopOf="@+id/navbar">
+
+
+        <ImageView
+            android:id="@+id/addIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/add_icon" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/saved_nav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/add_new"
+        app:layout_constraintEnd_toStartOf="@+id/settings_nav"
+        app:layout_constraintBottom_toBottomOf="@+id/navbar"
+        app:layout_constraintTop_toTopOf="@+id/navbar">
+
+
+        <ImageView
+            android:id="@+id/savedIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/savedNavText"
+            android:layout_alignEnd="@+id/savedNavText"
+            app:srcCompat="@drawable/nav_saved_icon" />
+
+        <TextView
+            android:id="@+id/savedNavText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/savedIcon"
+            android:text="Saved"
+            android:textColor="@color/colorAccent"
+            android:textSize="12dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/settings_nav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/saved_nav"
+        app:layout_constraintEnd_toEndOf="@+id/navbar"
+        app:layout_constraintBottom_toBottomOf="@+id/navbar"
+        app:layout_constraintTop_toTopOf="@+id/navbar">
+
+
+        <ImageView
+            android:id="@+id/settingsIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/settingsNavText"
+            android:layout_alignEnd="@+id/settingsNavText"
+            app:srcCompat="@drawable/nav_settings_icon" />
+
+        <TextView
+            android:id="@+id/settingsNavText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/settingsIcon"
+            android:text="Settings"
+            android:textColor="@color/colorAccent"
+            android:textSize="12dp" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/profileImage"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topbar"
+        app:srcCompat="@drawable/default_user" />
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="20dp"
+        android:fontFamily="@font/trip_sans_bold"
+        android:text="Jane"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/profileImage"
+        app:layout_constraintStart_toStartOf="@+id/profileImage"
+        app:layout_constraintEnd_toEndOf="@+id/profileImage"/>
+
+    <RelativeLayout
+        android:id="@+id/darkMode"
+        android:layout_width="242dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/settings_rect"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/username">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="Dark Mode"
+            android:textColor="@color/black"
+            android:layout_centerVertical="true"/>
+
+        <Switch
+            android:id="@+id/darkModeSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"/>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/logOut"
+        android:layout_width="242dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/settings_rect"
+        android:backgroundTint="@color/danger"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/darkMode">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Log Out"
+            android:textColor="@color/white"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+
+    <ImageButton
+        android:id="@+id/changeImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/circular_btn"
+        android:layout_marginBottom="-5dp"
+        android:layout_marginEnd="-5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/profileImage"
+        app:layout_constraintEnd_toEndOf="@+id/profileImage"
+        app:srcCompat="@drawable/camera_icon" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
