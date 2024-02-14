@@ -14,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class login extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
     private RelativeLayout loginBtn;
     private TextView switchToSignUpBtn;
     private EditText emailInput, passwordInput;
@@ -39,14 +39,14 @@ public class login extends AppCompatActivity {
 
         if (firebaseUser != null) {
             finish();
-            startActivity(new Intent(login.this, explore.class));
+            startActivity(new Intent(LoginActivity.this, ExploreActivity.class));
         }
 
         switchToSignUpBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
-                startActivity(new Intent(login.this, signup.class));
+                startActivity(new Intent(LoginActivity.this, SignupActivity.class));
             }
         });
 
@@ -65,15 +65,15 @@ public class login extends AppCompatActivity {
                 }
                 if (!(emailVal.isEmpty() && pass.isEmpty())) {
                     progressBar.setVisibility(View.VISIBLE);
-                    firebaseAuth.signInWithEmailAndPassword(emailVal, pass).addOnCompleteListener(login.this, task -> {
+                    firebaseAuth.signInWithEmailAndPassword(emailVal, pass).addOnCompleteListener(LoginActivity.this, task -> {
                         progressBar.setVisibility(View.GONE);
                         if (!task.isSuccessful()) {
                             passwordInput.setError("Invalid email or password");
                             passwordInput.requestFocus();
                         } else {
                             finish();
-                            Toast.makeText(login.this, String.format("Logged in as %s", firebaseAuth.getCurrentUser().getEmail()), Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(login.this, explore.class));
+                            Toast.makeText(LoginActivity.this, String.format("Logged in as %s", firebaseAuth.getCurrentUser().getEmail()), Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(LoginActivity.this, ExploreActivity.class));
                         }
                     });
                 } else {

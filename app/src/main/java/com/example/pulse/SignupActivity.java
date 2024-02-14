@@ -14,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.UserProfileChangeRequest;
 
-public class signup extends AppCompatActivity {
+public class SignupActivity extends AppCompatActivity {
     private ProgressBar progressBar;
     private RelativeLayout signUpBtn;
     private EditText usernameInput, emailInput, passwordInput, confirmPasswordInput;
@@ -38,14 +38,14 @@ public class signup extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
         if (firebaseAuth.getCurrentUser() != null) {
-            startActivity(new Intent(signup.this, explore.class));
+            startActivity(new Intent(SignupActivity.this, ExploreActivity.class));
         }
 
         switchToLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
-                startActivity(new Intent(signup.this, login.class));
+                startActivity(new Intent(SignupActivity.this, LoginActivity.class));
             }
         });
 
@@ -81,8 +81,8 @@ public class signup extends AppCompatActivity {
                             firebaseAuth.getCurrentUser().sendEmailVerification();
 
                             finish();
-                            Toast.makeText(signup.this, "Account created successfully", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(signup.this, explore.class));
+                            Toast.makeText(SignupActivity.this, "Account created successfully", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(SignupActivity.this, ExploreActivity.class));
                         } else {
                             if (task.getException().getMessage().contains("email address is already in use")) {
                                 emailInput.setError("Email already in use");
@@ -94,7 +94,7 @@ public class signup extends AppCompatActivity {
                                 passwordInput.setError("Invalid password");
                                 passwordInput.requestFocus();
                             } else {
-                                Toast.makeText(signup.this, "Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(SignupActivity.this, "Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             }
                         }
                     });

@@ -9,22 +9,22 @@
 
     <ImageView
         android:id="@+id/backgroundImage"
+        style="@style/AppBackground"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription='@string/app_name'
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/app_background" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/brandLogo"
+        style="@style/Logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/brand_logo" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <RelativeLayout
         android:id="@+id/signupBtn"
@@ -32,6 +32,7 @@
         android:layout_height="48dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/primary_btn_bg"
+        android:backgroundTint="@color/primaryBtnBg"
         app:layout_constraintBottom_toTopOf="@+id/loginBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" >
@@ -45,13 +46,14 @@
             android:textSize="16sp"
             android:text="Sign Up"
             android:layout_centerInParent="true"
-            android:textColor="@color/white">
+            android:textColor="@color/primaryBtnText">
         </TextView>
 
     </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/loginBtn"
+        android:backgroundTint="@color/secondaryBtnBg"
         android:layout_width="177dp"
         android:layout_height="48dp"
         android:layout_marginBottom="100dp"
@@ -69,7 +71,7 @@
             android:textSize="16sp"
             android:text="Log In"
             android:layout_centerInParent="true"
-            android:textColor="@color/black">
+            android:textColor="@color/secondaryBtnText">
         </TextView>
 
     </RelativeLayout>

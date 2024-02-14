@@ -11,6 +11,7 @@
         android:layout_width="0dp"
         android:layout_height="143dp"
         android:background="@drawable/topbar_large_bg"
+        android:backgroundTint="@color/navbarBg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,6 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="75dp"
         android:background="@drawable/navbar_bg"
+        android:backgroundTint="@color/navbarBg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,7 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_alignStart="@+id/exploreNavText"
             android:layout_alignEnd="@+id/exploreNavText"
-            app:srcCompat="@drawable/nav_explore_icon" />
+            app:srcCompat="@drawable/nav_explore_icon"/>
 
         <TextView
             android:id="@+id/exploreNavText"
@@ -352,7 +354,7 @@
                 android:layout_marginStart="20dp"
                 android:fontFamily="@font/trip_sans_medium"
                 android:text="Hello Jane"
-                android:textColor="@color/black"
+                android:textColor="@color/headingColor"
                 android:textSize="20dp" />
 
             <TextView
@@ -362,7 +364,7 @@
                 android:layout_marginStart="20dp"
                 android:fontFamily="@font/trip_sans"
                 android:text="Check out the new events"
-                android:textColor="#464646"
+                android:textColor="@color/subHeadingColor"
                 android:textSize="14dp"
                 android:layout_below="@+id/greeting" />
 
@@ -374,184 +376,19 @@
                 android:layout_marginStart="20dp"
                 android:fontFamily="@font/trip_sans_medium"
                 android:text="Happening Today"
-                android:textColor="@color/black"
+                android:textColor="@color/headingColor"
                 android:textSize="20dp"
                 android:layout_below="@+id/subGreeting" />
 
-            <HorizontalScrollView
+            <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/scrollView1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
                 android:scrollbars="none"
-                android:layout_below="@+id/heading1">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <RelativeLayout
-                        android:id="@+id/event1"
-                        android:layout_width="180dp"
-                        android:layout_height="wrap_content"
-                        android:paddingBottom="10dp"
-                        android:background="@drawable/events_card"
-                        app:layout_constraintBottom_toBottomOf="@+id/view"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/imageButton">
-
-                        <ImageView
-                            android:id="@+id/event1Bg"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentStart="true"
-                            android:layout_alignParentTop="true"
-                            android:layout_alignParentEnd="true"
-                            android:layout_marginTop="6dp"
-                            app:srcCompat="@drawable/image_1" />
-
-                        <RelativeLayout
-                            android:id="@+id/event1Date"
-                            android:layout_width="26dp"
-                            android:layout_height="32dp"
-                            android:layout_alignTop="@+id/event1Bg"
-                            android:layout_alignParentStart="true"
-                            android:layout_marginStart="15dp"
-                            android:layout_marginTop="10dp"
-                            android:background="@drawable/date_box">
-
-                            <TextView
-                                android:id="@+id/event1Day"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentTop="true"
-                                android:layout_alignParentStart="true"
-                                android:layout_alignParentEnd="true"
-                                android:fontFamily="@font/trip_sans_medium"
-                                android:text="30"
-                                android:textAlignment="center"
-                                android:textSize="15dp" />
-
-                            <TextView
-                                android:id="@+id/event1Month"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentBottom="true"
-                                android:layout_alignParentStart="true"
-                                android:layout_alignParentEnd="true"
-                                android:fontFamily="@font/trip_sans_medium"
-                                android:text="JUL"
-                                android:textAlignment="center"
-                                android:textSize="12dp" />
-
-                        </RelativeLayout>
-
-                        <TextView
-                            android:id="@+id/event1Title"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginEnd="10dp"
-                            android:layout_below="@+id/event1Bg"
-                            android:layout_alignParentStart="true"
-                            android:layout_alignParentEnd="true"
-                            android:layout_marginTop="5dp"
-                            android:text="Sunfest : Live in concert 2024"
-                            android:textSize="14dp"
-                            android:textColor="@color/black"
-                            android:fontFamily="@font/trip_sans_medium" />
-
-                        <RelativeLayout
-                            android:id="@+id/event1Details"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/event1Title"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginStart="10dp">
-
-                            <ImageView
-                                android:id="@+id/event1UserIcon"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentStart="true"
-                                app:srcCompat="@drawable/people_icon" />
-
-                            <TextView
-                                android:id="@+id/event1Capacity"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="5dp"
-                                android:layout_toEndOf="@+id/event1UserIcon"
-                                android:text="5000"
-                                android:textSize="10dp"
-                                android:textColor="@color/black"/>
-
-                            <ImageView
-                                android:id="@+id/event1SoldIcon"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="10dp"
-                                android:layout_toEndOf="@+id/event1Capacity"
-                                app:srcCompat="@drawable/done_icon" />
-
-                            <TextView
-                                android:id="@+id/event1Sold"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="5dp"
-                                android:layout_toEndOf="@+id/event1SoldIcon"
-                                android:text="121"
-                                android:textSize="10dp"
-                                android:textColor="@color/black"/>
-
-                        </RelativeLayout>
-
-                        <RelativeLayout
-                            android:id="@+id/event1Location"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/event1Details"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginStart="10dp">
-
-                            <ImageView
-                                android:id="@+id/event1LocationIcon"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentStart="true"
-                                app:srcCompat="@drawable/location_small_icon" />
-
-                            <TextView
-                                android:id="@+id/event1LocationText"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="5dp"
-                                android:layout_toEndOf="@+id/event1LocationIcon"
-                                android:text="Galle Face, Colombo, Sri Lanka"
-                                android:textSize="10dp"
-                                android:textColor="@color/black"/>
-
-                        </RelativeLayout>
-
-                        <ImageView
-                            android:id="@+id/event1SavedIcon"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignTop="@+id/event1Bg"
-                            android:layout_alignParentEnd="true"
-                            android:layout_marginTop="11dp"
-                            android:layout_marginEnd="11dp"
-                            app:srcCompat="@drawable/favorite" />
-
-
-                    </RelativeLayout>
-
-                </LinearLayout>
-            </HorizontalScrollView>
+                android:orientation="horizontal"
+                android:layout_below="@+id/heading1" />
 
             <TextView
                 android:id="@+id/heading2"
@@ -561,7 +398,7 @@
                 android:layout_marginStart="20dp"
                 android:fontFamily="@font/trip_sans_medium"
                 android:text="Upcoming"
-                android:textColor="@color/black"
+                android:textColor="@color/headingColor"
                 android:textSize="20dp"
                 android:layout_below="@+id/scrollView1" />
 

@@ -11,6 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="59dp"
         android:background="@drawable/topbar_bg"
+        android:backgroundTint="@color/navbarBg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -56,6 +57,7 @@
         android:layout_width="wrap_content"
         android:layout_height="75dp"
         android:background="@drawable/navbar_bg"
+        android:backgroundTint="@color/navbarBg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -237,13 +239,13 @@
             android:textColor="@color/black"
             android:layout_centerVertical="true"/>
 
-        <Switch
+        <com.google.android.material.switchmaterial.SwitchMaterial
             android:id="@+id/darkModeSwitch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="20dp"
             android:layout_centerVertical="true"
-            android:layout_alignParentEnd="true"/>
+            android:layout_alignParentEnd="true" />
 
     </RelativeLayout>
     <RelativeLayout

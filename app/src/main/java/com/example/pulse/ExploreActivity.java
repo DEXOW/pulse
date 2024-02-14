@@ -10,17 +10,19 @@ import android.widget.Toast;
 
 import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.io.IOException;
 import java.util.List;
 
-public class explore extends AppCompatActivity {
+public class ExploreActivity extends AppCompatActivity {
     private FusedLocationProviderClient fusedLocationClient;
     private FirebaseAuth firebaseAuth;
     private FirebaseFirestore firebaseFirestore;
@@ -66,13 +68,13 @@ public class explore extends AppCompatActivity {
 
         if (firebaseUser == null) {
             firebaseAuth.signOut();
-            startActivity(new Intent(explore.this, login.class));
+            startActivity(new Intent(ExploreActivity.this, LoginActivity.class));
         }
 
         getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
             @Override
             public void handleOnBackPressed() {
-                Toast.makeText(explore.this, "Press Back Again to Exit", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ExploreActivity.this, "Press Back Again to Exit", Toast.LENGTH_SHORT).show();
                 this.setEnabled(false);
 
                 new android.os.Handler().postDelayed(
@@ -86,28 +88,27 @@ public class explore extends AppCompatActivity {
 
         exploreBtn.setOnClickListener(v -> {
             finish();
-            startActivity(new Intent(explore.this, explore.class));
+            startActivity(new Intent(ExploreActivity.this, ExploreActivity.class));
         });
         eventsBtn.setOnClickListener(v -> {
             finish();
-            startActivity(new Intent(explore.this, events.class));
+            startActivity(new Intent(ExploreActivity.this, EventsActivity.class));
         });
         savedBtn.setOnClickListener(v -> {
             finish();
-            startActivity(new Intent(explore.this, saved.class));
+            startActivity(new Intent(ExploreActivity.this, SavedActivity.class));
         });
         SettingsBtn.setOnClickListener(v -> {
             finish();
-            startActivity(new Intent(explore.this, settings.class));
+            startActivity(new Intent(ExploreActivity.this, SettingsActivity.class));
         });
 
         firebaseFirestore.collection("events").get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
-                task.getResult().getDocuments().forEach(documentSnapshot -> {
-                    // Append events to the view
-
-                });
-                Toast.makeText(this, "Events loaded", Toast.LENGTH_SHORT).show();
+                List<DocumentSnapshot> events = task.getResult().getDocuments();
+                EventAdapter eventAdapter = new EventAdapter(events);
+                RecyclerView eventsRecyclerView = findViewById(R.id.scrollView1);
+                eventsRecyclerView.setAdapter(eventAdapter);
             } else {
                 Toast.makeText(this, "Error loading events", Toast.LENGTH_SHORT).show();
             }
