@@ -34,7 +34,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/trip_sans_bold"
         android:textSize="20dp"
-        android:text="Saved"
+        android:text="Events"
         android:textColor="@color/white"
         app:layout_constraintStart_toEndOf="@+id/back_btn"
         app:layout_constraintEnd_toStartOf="@+id/notifications_btn"
@@ -197,5 +197,82 @@
             android:textSize="12dp" />
 
     </RelativeLayout>
+
+    <HorizontalScrollView
+        android:id="@+id/filters"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:scrollbars="none"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topbar">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/filter1"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:layout_marginEnd="2dp"
+                android:background="@drawable/filter_near_me"
+                android:button="@null" />
+
+            <RadioButton
+                android:id="@+id/filter2"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="2dp"
+                android:background="@drawable/filter_sports"
+                android:button="@null" />
+
+            <RadioButton
+                android:id="@+id/filter3"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="2dp"
+                android:background="@drawable/filter_music"
+                android:button="@null" />
+
+            <RadioButton
+                android:id="@+id/filter4"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="2dp"
+                android:background="@drawable/filter_food"
+                android:button="@null" />
+
+            <RadioButton
+                android:id="@+id/filter5"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="2dp"
+                android:background="@drawable/filter_wine_n_dine"
+                android:button="@null" />
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/scrollView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:scrollbars="none"
+        android:orientation="horizontal"
+        android:elevation="0dp"
+        app:layout_constraintTop_toBottomOf="@id/filters"
+        app:layout_constraintStart_toStartOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

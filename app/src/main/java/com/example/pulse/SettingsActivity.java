@@ -166,6 +166,7 @@ public class SettingsActivity extends AppCompatActivity {
                         .load(photoUrl)
                         .circleCrop()
                         .into(profileImage);
+                Log.d("Image", "Image: " + photoUrl.toString());
             }
         } catch (Exception e) {
             Log.d("Error", "Error: " + e.getMessage());
