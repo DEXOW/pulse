@@ -1,16 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="pulse_purple">#6936F5</color>
     <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="white">#EDE7FF</color>
     <color name="danger">#FA3E3E</color>
 
-    <color name="colorPrimary">#6936F5</color>
+    <color name="colorPrimary">@color/pulse_purple</color>
     <color name="colorAccent">#CBB8FF</color>
     <color name="textColor">#000000</color>
+    <color name="headingColor">@color/black</color>
+    <color name="subHeadingColor">#47434f</color>
     <color name="backgroundColor">#FFFFFF</color>
-    
+
+    <color name="primaryBtnBg">@color/pulse_purple</color>
+    <color name="secondaryBtnBg">@color/white</color>
+    <color name="inputBg">#CBB8FF</color>
+
+    <color name="primaryBtnText">@color/white</color>
+    <color name="secondaryBtnText">@color/black</color>
+    <color name="inputText">@color/black</color>
+
+    <color name="navbarBg">@color/colorPrimary</color>
+    <color name="navIcon">@color/secondaryBtnBg</color>
+
     <style name="DangerButton" parent="Widget.MaterialComponents.Button.TextButton">
         <item name="android:textColor">@color/white</item>
         <item name="android:backgroundTint">@color/danger</item>
+    </style>
+
+    <style name="AppBackground">
+        <item name="android:background">@drawable/app_background</item>
+    </style>
+
+    <style name="Logo">
+        <item name="android:background">@drawable/brand_logo</item>
     </style>
 </resources>

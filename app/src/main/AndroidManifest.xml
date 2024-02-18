@@ -22,27 +22,27 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".signup"
+            android:name=".SignupActivity"
             android:exported="false">
         </activity>
         <activity
-            android:name=".login"
+            android:name=".LoginActivity"
             android:exported="false">
         </activity>
         <activity
-            android:name=".explore"
+            android:name=".ExploreActivity"
             android:exported="false">
         </activity>
         <activity
-            android:name=".events"
+            android:name=".EventsActivity"
             android:exported="false">
         </activity>
         <activity
-            android:name=".saved"
+            android:name=".SavedActivity"
             android:exported="false">
         </activity>
         <activity
-            android:name=".settings"
+            android:name=".SettingsActivity"
             android:exported="false">
         </activity>
     </application>

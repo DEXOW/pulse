@@ -11,6 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="59dp"
         android:background="@drawable/topbar_bg"
+        android:backgroundTint="@color/navbarBg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -56,6 +57,7 @@
         android:layout_width="wrap_content"
         android:layout_height="75dp"
         android:background="@drawable/navbar_bg"
+        android:backgroundTint="@color/navbarBg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -198,7 +200,7 @@
 
     <ScrollView
         android:id="@+id/scrollView"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
@@ -209,7 +211,7 @@
         app:layout_constraintTop_toBottomOf="@+id/topbar">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <RelativeLayout
@@ -359,152 +361,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignTop="@+id/event1Bg"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginTop="11dp"
-                    android:layout_marginEnd="11dp"
-                    app:srcCompat="@drawable/favorite" />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/event2"
-                android:layout_width="180dp"
-                android:layout_height="165dp"
-                android:background="@drawable/events_card">
-
-                <ImageView
-                    android:id="@+id/event2Bg"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginTop="6dp"
-                    app:srcCompat="@drawable/image_1" />
-
-                <RelativeLayout
-                    android:id="@+id/event2Date"
-                    android:layout_width="26dp"
-                    android:layout_height="32dp"
-                    android:layout_alignTop="@+id/event2Bg"
-                    android:layout_alignParentStart="true"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/date_box">
-
-                    <TextView
-                        android:id="@+id/event2Day"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentTop="true"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentEnd="true"
-                        android:fontFamily="@font/trip_sans_medium"
-                        android:text="30"
-                        android:textAlignment="center"
-                        android:textSize="15dp" />
-
-                    <TextView
-                        android:id="@+id/event2Month"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentBottom="true"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentEnd="true"
-                        android:fontFamily="@font/trip_sans_medium"
-                        android:text="JUL"
-                        android:textAlignment="center"
-                        android:textSize="12dp" />
-
-                </RelativeLayout>
-
-                <TextView
-                    android:id="@+id/event2Title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/event2Bg"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginTop="5dp"
-                    android:textAlignment="center"
-                    android:text="Sunfest : Live in concert 2024"
-                    android:textSize="12dp"
-                    android:fontFamily="@font/trip_sans_medium" />
-
-                <RelativeLayout
-                    android:id="@+id/event2Details"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/event2Title"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginStart="10dp">
-
-                    <ImageView
-                        android:id="@+id/event2UserIcon"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        app:srcCompat="@drawable/people_icon" />
-
-                    <TextView
-                        android:id="@+id/event2Capacity"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:layout_toEndOf="@+id/event2UserIcon"
-                        android:text="5000"
-                        android:textSize="7dp" />
-
-                    <ImageView
-                        android:id="@+id/event2SoldIcon"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_toEndOf="@+id/event2Capacity"
-                        app:srcCompat="@drawable/done_icon" />
-
-                    <TextView
-                        android:id="@+id/event2Sold"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:layout_toEndOf="@+id/event2SoldIcon"
-                        android:text="121"
-                        android:textSize="7dp" />
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/event2Location"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/event2Details"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginStart="10dp">
-
-                    <ImageView
-                        android:id="@+id/event2LocationIcon"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        app:srcCompat="@drawable/location_small_icon" />
-
-                    <TextView
-                        android:id="@+id/event2LocationText"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:layout_toEndOf="@+id/event2LocationIcon"
-                        android:text="Galle Face, Colombo, Sri Lanka"
-                        android:textSize="7dp" />
-
-                </RelativeLayout>
-
-                <ImageView
-                    android:id="@+id/event2SavedIcon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignTop="@+id/event2Bg"
                     android:layout_alignParentEnd="true"
                     android:layout_marginTop="11dp"
                     android:layout_marginEnd="11dp"

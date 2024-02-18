@@ -2,6 +2,7 @@ package com.example.pulse;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -11,8 +12,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class saved extends AppCompatActivity {
+public class SavedActivity extends AppCompatActivity {
     private RelativeLayout exploreBtn, eventsBtn, savedBtn, SettingsBtn;
+    private ImageButton backBtn;
     private FirebaseAuth firebaseAuth;
 
     @Override
@@ -20,6 +22,7 @@ public class saved extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_saved);
 
+        backBtn = findViewById(R.id.back_btn);
         exploreBtn = findViewById(R.id.explore_nav);
         eventsBtn = findViewById(R.id.calender_nav);
         savedBtn = findViewById(R.id.saved_nav);
@@ -30,13 +33,13 @@ public class saved extends AppCompatActivity {
 
         if (firebaseUser == null) {
             firebaseAuth.signOut();
-            startActivity(new Intent(saved.this, login.class));
+            startActivity(new Intent(SavedActivity.this, LoginActivity.class));
         }
 
         getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
             @Override
             public void handleOnBackPressed() {
-                Toast.makeText(saved.this, "Press Back Again to Exit", Toast.LENGTH_SHORT).show();
+                Toast.makeText(SavedActivity.this, "Press Back Again to Exit", Toast.LENGTH_SHORT).show();
                 this.setEnabled(false);
 
                 new android.os.Handler().postDelayed(
@@ -46,21 +49,25 @@ public class saved extends AppCompatActivity {
             }
         });
 
+        backBtn.setOnClickListener(v -> {
+            finish();
+            startActivity(new Intent(SavedActivity.this, ExploreActivity.class));
+        });
         exploreBtn.setOnClickListener(v -> {
             finish();
-            startActivity(new Intent(saved.this, explore.class));
+            startActivity(new Intent(SavedActivity.this, ExploreActivity.class));
         });
         eventsBtn.setOnClickListener(v -> {
             finish();
-            startActivity(new Intent(saved.this, events.class));
+            startActivity(new Intent(SavedActivity.this, EventsActivity.class));
         });
         savedBtn.setOnClickListener(v -> {
             finish();
-            startActivity(new Intent(saved.this, saved.class));
+            startActivity(new Intent(SavedActivity.this, SavedActivity.class));
         });
         SettingsBtn.setOnClickListener(v -> {
             finish();
-            startActivity(new Intent(saved.this, settings.class));
+            startActivity(new Intent(SavedActivity.this, SettingsActivity.class));
         });
     }
 }

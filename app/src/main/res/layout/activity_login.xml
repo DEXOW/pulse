@@ -19,11 +19,11 @@
 
     <ImageView
         android:id="@+id/imageView"
+        style="@style/AppBackground"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/app_background" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/heading"
@@ -43,6 +43,7 @@
         android:layout_height="48dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/input_bg"
+        android:backgroundTint="@color/inputBg"
         app:layout_constraintBottom_toTopOf="@+id/password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -60,8 +61,8 @@
             android:fontFamily="@font/trip_sans"
             android:inputType="text"
             android:paddingStart="20dp"
-            android:textColor="@color/black"
-            android:textColorHint="@color/black"
+            android:textColor="@color/inputText"
+            android:textColorHint="@color/inputText"
             android:hint="Email"
             android:textAlignment="textStart"/>
     </RelativeLayout>
@@ -71,6 +72,7 @@
         android:layout_width="238dp"
         android:layout_height="48dp"
         android:background="@drawable/input_bg"
+        android:backgroundTint="@color/inputBg"
         app:layout_constraintBottom_toTopOf="@+id/loginBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -87,8 +89,8 @@
             android:fontFamily="@font/trip_sans"
             android:inputType="textPassword"
             android:paddingStart="20dp"
-            android:textColor="@color/black"
-            android:textColorHint="@color/black"
+            android:textColor="@color/inputText"
+            android:textColorHint="@color/inputText"
             android:hint="Password"
             android:textAlignment="textStart" />
     </RelativeLayout>
@@ -111,6 +113,7 @@
         android:layout_height="48dp"
         android:layout_marginBottom="100dp"
         android:background="@drawable/primary_btn_bg"
+        android:backgroundTint="@color/primaryBtnBg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -123,8 +126,8 @@
             android:layout_marginStart="8dp"
             android:fontFamily="@font/trip_sans_medium"
             android:text="Log In"
-            android:textColor="@color/white"
-            android:textSize="16sp"></TextView>
+            android:textColor="@color/primaryBtnText"
+            android:textSize="16sp"/>
 
     </RelativeLayout>
 
